@@ -31,3 +31,5 @@ gem 'jbuilder', '~> 1.0.1'
 
 gem 'debugger'
 gem 'thin'
+
+gem 'omniauth-facebook'

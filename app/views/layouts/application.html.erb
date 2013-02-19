@@ -11,9 +11,26 @@
 <body>
 
   <div class="container-narrow">
+
+    <div class="masthead">
+      <ul class="nav nav-pills pull-right">
+        <% if current_user %>
+          <li class="active"><a href="#"><%= current_user.name %></a></li>
+          <li>
+            <%= link_to 'Logout', logout_path, method: :delete %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to 'Login with Facebook', '/auth/facebook' %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
     <div class="header-logo">
       <h1>Bolão do Oscar</h1>
     </div>
+
     <%= yield %>
   </div>
 

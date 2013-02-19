@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130219050959) do
+ActiveRecord::Schema.define(version: 20130219231110) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20130219050959) do
   end
 
   add_index "nominees", ["category_id"], name: "index_nominees_on_category_id"
+
+  create_table "users", force: true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "votes", force: true do |t|
     t.integer  "category_id"
