@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-OscarBolao::Application.config.secret_key_base = 'd425486c91015cf40381c805963f4dbb6422e23bd6b24fcece7b3e431f021ec21b71e3bba6640a27e8948885617653b1be9405236fe5c905ff9085bb25070955'
+OscarBolao::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
