@@ -1,7 +1,7 @@
 OscarBolao::Application.routes.draw do
-  get 'auth/:provider/callback', to: 'sessions#create'
-  delete 'logout', to: 'sessions#destroy', as: 'logout'
-  match 'auth/failure', to: redirect('/'), via: :any
+  match 'auth/:provider/callback', to: 'sessions#create', via: :any
+  match 'logout', to: 'sessions#destroy', as: 'logout', via: :any
+  match 'auth/failure', to: redirect('/'), via: :any, via: :any
 
   resources :votes
   root to: 'entry#new'
