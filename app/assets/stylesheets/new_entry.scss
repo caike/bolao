@@ -1,10 +1,19 @@
+.container-narrow {
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+.header-logo h1 {
+  font-size: 72px;
+  line-height: 1;
+  text-align: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
 .entry-actions {
+  padding: 10px;
   .entry-message{
     display: none;
     padding: 10px;
-  }
-  .success {
-    background: green;
-    color: black;
   }
 }

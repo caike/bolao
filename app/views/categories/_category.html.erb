@@ -1,0 +1,15 @@
+<section class="category">
+
+  <h3><%= category.name %></h3>
+
+  <p class="nominees" id="<%= category.id %>">
+    <%= collection_radio_buttons(:category, category.id, category.nominees, :id, :name) do |b| %>
+      <%= b.label(class: 'radio') { b.radio_button + b.text } %>
+    <% end %>
+  </p>
+
+  <p class="entry-actions">
+    <button class="btn">Save</button>
+    <span class="entry-message alert alert-success">Your vote has been cast</span>
+  </p>
+</section>
