@@ -1,0 +1,14 @@
+<h2>New Entry</h2>
+
+<% @categories.each do |category| %>
+<section class="category">
+  <h3><%= category.name %></h3>
+  <p class="nominees">
+    <%= collection_radio_buttons(:category, category.id, category.nominees, :id, :name) %>
+  </p>
+  <p class="entry-actions">
+    <button>Save</button>
+    <span class="entry-message">Your vote has been cast</span>
+  </p>
+</section>
+<% end %>
