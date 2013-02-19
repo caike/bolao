@@ -1,0 +1,32 @@
+toggleMessage = (obj, klass) ->
+  $(obj).next(klass)
+    .addClass('success')
+    .show()
+
+  setTimeout(->
+    $(obj).next(klass).hide()
+  , 1900)
+
+voteInfoFor = (button) ->
+  nominees = $(button)
+    .closest('p').prev()
+  vote = nominees
+    .find('input[type=radio]:checked')
+  {
+    category: nominees.attr('id')
+    vote: vote.attr('value')
+  }
+
+
+jQuery ($) ->
+  $('.entry-actions')
+    .find('button').on 'click', ->
+      button = @
+      window.banana  = button
+      $.ajax({
+        url: '/votes'
+        method: 'POST'
+        data: voteInfoFor(button)
+        success: -> toggleMessage(button, '.entry-message')
+      })
+

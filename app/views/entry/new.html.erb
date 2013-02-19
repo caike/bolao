@@ -3,7 +3,7 @@
 <% @categories.each do |category| %>
 <section class="category">
   <h3><%= category.name %></h3>
-  <p class="nominees">
+  <p class="nominees" id="<%= category.id %>">
     <%= collection_radio_buttons(:category, category.id, category.nominees, :id, :name) %>
   </p>
   <p class="entry-actions">
