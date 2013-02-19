@@ -8,13 +8,15 @@ toggleMessage = (obj, klass) ->
   , 1900)
 
 voteInfoFor = (button) ->
-  nominees = $(button)
+  category = $(button)
     .closest('p').prev()
-  vote = nominees
+  nominee = category
     .find('input[type=radio]:checked')
   {
-    category: nominees.attr('id')
-    vote: vote.attr('value')
+    vote: {
+      category_id: category.attr('id')
+      nominee_id: nominee.attr('value')
+    }
   }
 
 
