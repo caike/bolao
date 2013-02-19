@@ -4,7 +4,11 @@
 
   <p class="nominees" id="<%= category.id %>">
     <%= collection_radio_buttons(:category, category.id, category.nominees, :id, :name) do |b| %>
-      <%= b.label(class: 'radio') { b.radio_button + b.text } %>
+      <% if current_user %>
+        <%= b.label(class: 'radio') { b.radio_button + b.text } %>
+      <% else %>
+        <%= b.label(class: 'radio') { b.radio_button(disabled: true) + b.text } %>
+      <% end %>
     <% end %>
   </p>
 
