@@ -1,9 +1,14 @@
 #encoding: UTF-8
 #
 
-Category.destroy_all
+oscar = Event.find_or_create_by!(name: 'Oscar Picks').tap do |o|
+  o.airs_on = 5.days.from_now
+  o.save!
+end
 
-Category.find_or_create_by!(name: 'Best Picture').tap  do |c|
+oscar.categories.destroy_all
+
+oscar.categories.find_or_create_by!(name: 'Best Picture').tap  do |c|
   c.nominees.create(name: 'Amour')
   c.nominees.create(name: 'Life of Pi')
   c.nominees.create(name: 'Argo')
@@ -15,15 +20,48 @@ Category.find_or_create_by!(name: 'Best Picture').tap  do |c|
   c.nominees.create(name: 'Les Miserables')
 end
 
-Category.find_or_create_by!(name: 'Actor in a Leading Role').tap do |c|
+oscar.categories.find_or_create_by!(name: 'Actor in a Leading Role').tap do |c|
   ['Bradey Cooper', 'Joaquin Phoenix', 'Daniel Day-Lewis', 'Denzel Washington', 'Hugh Jackman'].each do |a|
     c.nominees.create(name: a)
   end
 end
 
-Category.find_or_create_by!(name: 'Acress in a Leading Role').tap do |c|
+oscar.categories.find_or_create_by!(name: 'Acress in a Leading Role').tap do |c|
   ['Jessica Chastain', 'Quvenzhané Wallis', 'Jennifer Lawrence', 'Naomi Watts', 'Emmanuelle Riva'].each do |a|
     c.nominees.create(name: a)
   end
+end
+
+
+ufc = Event.find_or_create_by!(name: 'UFC 157 Picks').tap do |o|
+  o.airs_on = 4.days.from_now
+  o.save!
+end
+
+oscar.categories.destroy_all
+
+ufc.categories.find_or_create_by!(name: 'Women\'s Bantamweight').tap  do |c|
+  c.nominees.create(name: 'Ronda Rousey')
+  c.nominees.create(name: 'Liz Carmouche')
+end
+
+ufc.categories.find_or_create_by!(name: 'Light Heavyweight').tap do |c|
+  c.nominees.create(name: 'Lyoto Machida')
+  c.nominees.create(name: 'Dan Henderson')
+end
+
+ufc.categories.find_or_create_by!(name: 'Bantamweight').tap do |c|
+  c.nominees.create(name: 'Urijah Faber')
+  c.nominees.create(name: 'Ian Menjivar')
+end
+
+ufc.categories.find_or_create_by!(name: 'Welterweight').tap do |c|
+  c.nominees.create(name: 'Court McGee')
+  c.nominees.create(name: 'Josh Neer')
+end
+
+ufc.categories.find_or_create_by!(name: 'Welterweight').tap do |c|
+  c.nominees.create(name: 'Josh Koshcheck')
+  c.nominees.create(name: 'Robbie Lawler')
 end
 

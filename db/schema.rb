@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130220001021) do
+ActiveRecord::Schema.define(version: 20130220022127) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "event_id"
+  end
+
+  add_index "categories", ["event_id"], name: "index_categories_on_event_id"
+
+  create_table "events", force: true do |t|
+    t.string   "name"
+    t.datetime "airs_on"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

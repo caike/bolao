@@ -3,6 +3,8 @@ OscarBolao::Application.routes.draw do
   delete 'logout', to: 'sessions#destroy', as: 'logout'
   match 'auth/failure', to: redirect('/'), via: :any
 
+  resources :events
+
   resources :votes
-  root to: 'entry#new'
+  root to: 'events#upcoming'
 end
