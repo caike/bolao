@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.upcoming
+    @event = Event.find(params[:id])
     @categories = @event.categories
   end
 end
