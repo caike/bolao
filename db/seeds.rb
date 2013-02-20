@@ -1,3 +1,6 @@
+#encoding: UTF-8
+#
+
 Category.destroy_all
 
 Category.find_or_create_by!(name: 'Best Picture').tap  do |c|
@@ -13,10 +16,14 @@ Category.find_or_create_by!(name: 'Best Picture').tap  do |c|
 end
 
 Category.find_or_create_by!(name: 'Actor in a Leading Role').tap do |c|
-  ['Bradey Cooper', 'Joaquin Phoenix', 'Daniel Day-Lewis', 'Denzel Washington', 'High Jackman'].each do |a|
+  ['Bradey Cooper', 'Joaquin Phoenix', 'Daniel Day-Lewis', 'Denzel Washington', 'Hugh Jackman'].each do |a|
     c.nominees.create(name: a)
   end
 end
 
-Category.create!(name: 'Acress in a Leading Role')
-Category.create!(name: 'Actor in a Supporting Role')
+Category.find_or_create_by!(name: 'Acress in a Leading Role').tap do |c|
+  ['Jessica Chastain', 'Quvenzhané Wallis', 'Jennifer Lawrence', 'Naomi Watts', 'Emmanuelle Riva'].each do |a|
+    c.nominees.create(name: a)
+  end
+end
+

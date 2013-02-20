@@ -1,6 +1,6 @@
 class VotesController < ApplicationController
   def create
-    Vote.create!(vote_params)
+    Vote.create_for_user!(current_user, vote_params)
     head :ok
   end
 

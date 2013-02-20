@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-  has_many :nominees
+  has_many :nominees, dependent: :destroy
 end

@@ -3,7 +3,8 @@
   <h3><%= category.name %></h3>
 
   <p class="nominees" id="<%= category.id %>">
-    <%= collection_radio_buttons(:category, category.id, category.nominees, :id, :name) do |b| %>
+    <%= collection_radio_buttons(:category, category.id, category.nominees, :id, :name,
+                                 checked: current_votes_for_category(category.id)) do |b| %>
       <% if current_user %>
         <%= b.label(class: 'radio') { b.radio_button + b.text } %>
       <% else %>
