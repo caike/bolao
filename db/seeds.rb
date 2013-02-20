@@ -38,7 +38,7 @@ ufc = Event.find_or_create_by!(name: 'UFC 157 Picks').tap do |o|
   o.save!
 end
 
-oscar.categories.destroy_all
+ufc.categories.destroy_all
 
 ufc.categories.find_or_create_by!(name: 'Women\'s Bantamweight').tap  do |c|
   c.nominees.create(name: 'Ronda Rousey')
