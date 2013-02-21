@@ -55,12 +55,12 @@ ufc.categories.find_or_create_by!(name: 'Bantamweight').tap do |c|
   c.nominees.create(name: 'Ian Menjivar')
 end
 
-ufc.categories.find_or_create_by!(name: 'Welterweight').tap do |c|
+ufc.categories.find_or_create_by!(name: 'Welterweight #1').tap do |c|
   c.nominees.create(name: 'Court McGee')
   c.nominees.create(name: 'Josh Neer')
 end
 
-ufc.categories.find_or_create_by!(name: 'Welterweight').tap do |c|
+ufc.categories.find_or_create_by!(name: 'Welterweight #2').tap do |c|
   c.nominees.create(name: 'Josh Koshcheck')
   c.nominees.create(name: 'Robbie Lawler')
 end
