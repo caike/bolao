@@ -7,3 +7,6 @@ development:
   adapter: postgresql
   database: oscar_bolao_development
 
+test:
+  adapter: postgresql
+  database: oscar_bolao_test
