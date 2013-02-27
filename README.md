@@ -6,9 +6,9 @@ Need to setup some ENV's
 
 >export SECRET_KEY_BASE='...' # rake secret
 
-> The FB sandbox expects your server to run @ http://localhost:3000
->export FACEBOOK_KEY='127878264057404'
->export FACEBOOK_SECRET='e2f92ed62fc30974a05e4d7dc48c9046'
+> You need to create a Facebook app in order to log in
+>export FACEBOOK_KEY=''
+>export FACEBOOK_SECRET=''
 
 ## Future Features
 
