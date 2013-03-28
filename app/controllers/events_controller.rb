@@ -1,4 +1,8 @@
 class EventsController < ApplicationController
+	def index
+		@events = Event.all	
+	end
+
   def upcoming
     closest_event = (Event.upcoming || Event.most_recent)
     redirect_to event_path(closest_event)
