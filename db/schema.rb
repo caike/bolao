@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130220022127) do
+ActiveRecord::Schema.define(version: 20130409215457) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -27,7 +27,10 @@ ActiveRecord::Schema.define(version: 20130220022127) do
     t.datetime "airs_on"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tournament_id"
   end
+
+  add_index "events", ["tournament_id"], name: "index_events_on_tournament_id"
 
   create_table "nominees", force: true do |t|
     t.string   "name"
@@ -37,6 +40,31 @@ ActiveRecord::Schema.define(version: 20130220022127) do
   end
 
   add_index "nominees", ["category_id"], name: "index_nominees_on_category_id"
+
+  create_table "stage_events", force: true do |t|
+    t.integer  "stage_id"
+    t.integer  "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "stage_events", ["event_id"], name: "index_stage_events_on_event_id"
+  add_index "stage_events", ["stage_id"], name: "index_stage_events_on_stage_id"
+
+  create_table "stages", force: true do |t|
+    t.string   "name"
+    t.integer  "tournament_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "stages", ["tournament_id"], name: "index_stages_on_tournament_id"
+
+  create_table "tournaments", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "provider"
