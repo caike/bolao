@@ -1,6 +1,6 @@
 class Vote < ActiveRecord::Base
-  belongs_to :category
-  belongs_to :nominee
+  belongs_to :category # the game
+  belongs_to :nominee # the winner pick
   belongs_to :user
 
   def self.create_for_user!(user, params)
