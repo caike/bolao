@@ -35,7 +35,11 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.5.0)
+    daemon_controller (1.1.5)
     daemons (1.1.9)
+    dotenv (0.9.0)
+    dotenv-rails (0.9.0)
+      dotenv (= 0.9.0)
     erubis (2.7.0)
     eventmachine (1.0.0)
     execjs (1.4.0)
@@ -76,6 +80,10 @@ GEM
     omniauth-oauth2 (1.1.1)
       oauth2 (~> 0.8.0)
       omniauth (~> 1.0)
+    passenger (4.0.16)
+      daemon_controller (>= 1.1.0)
+      rack
+      rake (>= 0.8.1)
     pg (0.15.0)
     polyglot (0.3.3)
     rack (1.5.2)
@@ -134,9 +142,11 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (= 4.0.0.beta1)
+  dotenv-rails
   jbuilder (~> 1.0.1)
   jquery-rails
   omniauth-facebook
+  passenger
   pg
   rails (= 4.0.0.beta1)
   sass-rails (= 4.0.0.beta1)

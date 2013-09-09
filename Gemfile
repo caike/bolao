@@ -31,3 +31,7 @@ gem 'jbuilder', '~> 1.0.1'
 gem 'thin'
 
 gem 'omniauth-facebook'
+
+gem 'dotenv-rails', groups: [:development, :test]
+
+gem 'passenger'
