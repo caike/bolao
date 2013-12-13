@@ -1,4 +1,6 @@
-# Setup
+# UFC Picks
+
+Visit [meu-bolao.herokuapp.com]()
 
 ## ENV variables
 
