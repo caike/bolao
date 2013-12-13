@@ -1,6 +1,6 @@
 # UFC Picks
 
-Visit [meu-bolao.herokuapp.com]()
+Visit [http://meu-bolao.herokuapp.com](http://meu-bolao.herokuapp.com)
 
 ## ENV variables
 
