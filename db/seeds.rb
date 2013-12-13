@@ -2,7 +2,7 @@
 #
 
 oscar = Event.find_or_create_by!(name: 'Oscar Picks').tap do |o|
-  o.airs_on = 5.days.from_now
+  o.airs_on = Time.parse('February 9, 2013')
   o.save!
 end
 
@@ -34,7 +34,7 @@ end
 
 
 ufc = Event.find_or_create_by!(name: 'UFC 157 Picks').tap do |o|
-  o.airs_on = 4.days.from_now
+  o.airs_on = Time.parse('February 23, 2013')
   o.save!
 end
 
