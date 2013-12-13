@@ -65,3 +65,36 @@ ufc.categories.find_or_create_by!(name: 'Welterweight #2').tap do |c|
   c.nominees.create(name: 'Robbie Lawler')
 end
 
+
+
+ufc = Event.find_or_create_by!(name: 'UFC 168 Picks').tap do |o|
+  o.airs_on = Time.parse('December 28, 2013')
+  o.save!
+end
+
+ufc.categories.destroy_all
+
+ufc.categories.find_or_create_by!(name: 'Middleweight').tap  do |c|
+  c.nominees.create(name: 'Chris Weidman')
+  c.nominees.create(name: 'Anderson Silva')
+end
+
+ufc.categories.find_or_create_by!(name: 'Woman\'s Bantamweight').tap do |c|
+  c.nominees.create(name: 'Ronda Rousey')
+  c.nominees.create(name: 'Miesha Tate')
+end
+
+ufc.categories.find_or_create_by!(name: 'Heavyweight').tap do |c|
+  c.nominees.create(name: 'Josh Barnett')
+  c.nominees.create(name: 'Travis Browne')
+end
+
+ufc.categories.find_or_create_by!(name: 'Lightweight').tap do |c|
+  c.nominees.create(name: 'Jim Miller')
+  c.nominees.create(name: 'Fabricio Camoes')
+end
+
+ufc.categories.find_or_create_by!(name: 'Featherweight').tap do |c|
+  c.nominees.create(name: 'Dustin Poirier')
+  c.nominees.create(name: 'Diego Brandao')
+end
