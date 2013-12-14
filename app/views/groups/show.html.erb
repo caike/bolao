@@ -1,0 +1,8 @@
+<div class="header-logo">
+  <h2><%= @group.name %></h2>
+</div>
+<div class="group-list">
+  <dl>
+    <%= render partial: 'member', collection: @group.users %>
+  </dl>
+</div>

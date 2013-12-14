@@ -1,0 +1,8 @@
+<dt><%= member.name %></dt>
+
+<% member.votes.each do |vote|%>
+  <dd>
+    <strong><%= vote.nominee.try(:name) %></strong> 
+    for <em><%= vote.category.try(:name) %></em>
+  </dd>
+<% end %>
